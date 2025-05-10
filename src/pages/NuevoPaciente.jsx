@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Header } from '../components/layout/header';
 import Footer from '../components/layout/Footer';
+import FormularioPaciente from '../components/pacientes/FormularioPaciente';
 
 export const NuevoPaciente = () => {
   return (
@@ -8,17 +9,14 @@ export const NuevoPaciente = () => {
       <Header />
       
       <main className="container mx-auto px-4 py-8 flex-grow">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">holaaaa Administrador de Pacientes</h1>
-          {/* <Link 
-            to="/nuevo-paciente"
-            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
-          >
-            Nuevo Paciente
-          </Link> */}
+      <h1 className="text-3xl font-bold">Nuevo Paciente</h1>
+        <div className="mb-6">
+          <Link to="/" className="text-blue-500 hover:underline">
+            &larr; Volver
+          </Link>
         </div>
         
-
+        <FormularioPaciente />
       </main>
       
       <Footer />
