@@ -2,19 +2,25 @@
 import { createContext, useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+
 const PacientesContext = createContext();
 
+
 const PacientesProvider = ({ children }) => {
-  // Estado inicial - cargar desde localStorage si existe
+  // Estado inicial - cargar desde localStorage si existe, si no, empieza con un arreglo vacio
   const [pacientes, setPacientes] = useState(
     JSON.parse(localStorage.getItem('pacientes')) || []
   );
   
+
   // Guardar en localStorage cada vez que cambia el estado
   useEffect(() => {
     localStorage.setItem('pacientes', JSON.stringify(pacientes));
   }, [pacientes]);
   
+
+
+
   // Funciones CRUD
   const agregarPaciente = (paciente) => {
     // Añadir id y fecha de registro
@@ -26,9 +32,16 @@ const PacientesProvider = ({ children }) => {
     setPacientes([...pacientes, nuevoPaciente]);
   };
   
+
+
+
+
   const obtenerPaciente = (id) => {
     return pacientes.find(paciente => paciente.id === id);
   };
+  
+
+
   
   const actualizarPaciente = (pacienteActualizado) => {
     setPacientes(
@@ -38,6 +51,9 @@ const PacientesProvider = ({ children }) => {
     );
   };
   
+
+
+
   const eliminarPaciente = (id) => {
     setPacientes(pacientes.filter(paciente => paciente.id !== id));
   };
