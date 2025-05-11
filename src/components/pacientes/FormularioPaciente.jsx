@@ -141,9 +141,9 @@ const FormularioPaciente = ({ pacienteEditar }) => {
         </label>
         <input 
           type="date" 
-          id="ProximaCita"
-          name="ProximaCita"
-          value={formData.ProximaCita}
+          id="proximaCita"
+          name="proximaCita"
+          value={formData.proximaCita}
           onChange={handleChange}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />

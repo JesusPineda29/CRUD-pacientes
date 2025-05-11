@@ -15,6 +15,7 @@ const PacientesProvider = ({ children }) => {
 
   // Guardar en localStorage cada vez que cambia el estado
   useEffect(() => {
+    console.log('[DEBUG] Guardando en localStorage:', pacientes);
     localStorage.setItem('pacientes', JSON.stringify(pacientes));
   }, [pacientes]);
   
